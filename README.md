@@ -1,6 +1,6 @@
 # LADMM-Net: An Unrolled Deep Network For Spectral Image Fusion From Compressive Data
 
-Juan Marcos Ramírez, José Ignacio Martínez Torre, [Henry Arguello](http://hdspgroup.com/ "HDSP's Homepage")
+Juan Marcos Ramírez, José Ignacio Martínez Torre, [Henry Arguello](url)(http://hdspgroup.com/ "HDSP's Homepage")
 
 ## Abstract
 
