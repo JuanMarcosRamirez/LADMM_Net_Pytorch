@@ -14,11 +14,7 @@ Hyperspectral (HS) and multispectral (MS) image fusion aims at estimating a high
 
 ## License
 
-This code package is licensed under the GNU GENERAL PUBLIC LICENSE (version 3) - see the [LICENSE](LICENSE) file for details
-
-## Author
-
-* Juan Marcos Ramírez Rondón. GET-Cofund MSCA Postdoctoral Fellow. Computer Science Department. [Universidad Rey Juan Carlos](http://www.urjc.es). Móstoles, 28938, Spain. 
+This code package is licensed under the GNU GENERAL PUBLIC LICENSE (version 3) - see the [LICENSE](LICENSE) file for details.
 
 ### Contact
 
