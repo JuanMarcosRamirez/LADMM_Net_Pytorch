@@ -9,7 +9,7 @@ Hyperspectral (HS) and multispectral (MS) image fusion aims at estimating a high
 
 ### Platform
 
-* Ubuntu 18.04 Operating System, Syder 3
+* Ubuntu 18.04 Operating System, Spyder 3
 
 
 ## License
