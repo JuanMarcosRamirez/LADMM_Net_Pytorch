@@ -18,7 +18,7 @@ To reproduce the paper results, please download spectral images and coded apertu
 
 ### Platform
 
-* Ubuntu 18.04 Operating System, Spyder 3
+* Ubuntu 18.04 Operating System.
 
 ### License
 
