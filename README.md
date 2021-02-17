@@ -11,6 +11,7 @@ Hyperspectral (HS) and multispectral (MS) image fusion aims at estimating a high
 
 ![Demo image](https://github.com/JuanMarcosRamirez/LADMM_Net_Pytorch/blob/master/images/RGBcomposites.jpg?raw=true "Demo houston")
 
+
 ## Dataset
 
 To reproduce the paper results, please download spectral images and coded aperture patterns from this [Google Drive.](https://drive.google.com/drive/folders/1cMRJnMuyd9zdi0vQxkxwCFJUX8HhfZYj?usp=sharing "Training dataset link")
@@ -28,7 +29,11 @@ This code package is licensed under the GNU GENERAL PUBLIC LICENSE (version 3) -
 
 [Juan Marcos Ramirez](juanmarcos.ramirez@ujrc.es)
 
-## Date
+### Date
 
 February 15, 2021
+
+### Acknowledgements
+
+This work has received funding from the European Union’s Horizon 2020 research and innovation programme under the Marie Skłodowska-Curie grant agreement No 754382, GOT ENERGY TALENT. The content of this article does not reflect the official opinion of the European Union. Responsibility for the information and views expressed herein lies entirely with the authors.
 
