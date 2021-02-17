@@ -11,12 +11,16 @@ Hyperspectral (HS) and multispectral (MS) image fusion aims at estimating a high
 
 ![Demo image](https://github.com/JuanMarcosRamirez/LADMM_Net_Pytorch/blob/master/images/RGBcomposites.jpg?raw=true "Demo houston")
 
+## Dataset
+
+To reproduce the results, please download the dataset from this [Google Drive.](https://drive.google.com/drive/folders/1cMRJnMuyd9zdi0vQxkxwCFJUX8HhfZYj?usp=sharing "Training dataset link")
+
+
 ### Platform
 
 * Ubuntu 18.04 Operating System, Spyder 3
 
-
-## License
+### License
 
 This code package is licensed under the GNU GENERAL PUBLIC LICENSE (version 3) - see the [LICENSE](LICENSE) file for details.
 
