@@ -13,7 +13,7 @@ Hyperspectral (HS) and multispectral (MS) image fusion aims at estimating a high
 
 ## Dataset
 
-To reproduce the results, please download the dataset from this [Google Drive.](https://drive.google.com/drive/folders/1cMRJnMuyd9zdi0vQxkxwCFJUX8HhfZYj?usp=sharing "Training dataset link")
+To reproduce the paper results, please download spectral images and coded aperture patterns from this [Google Drive.](https://drive.google.com/drive/folders/1cMRJnMuyd9zdi0vQxkxwCFJUX8HhfZYj?usp=sharing "Training dataset link")
 
 
 ### Platform
