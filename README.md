@@ -20,6 +20,8 @@ To reproduce the paper results, please download spectral images and coded apertu
 
 ![Demo image](https://github.com/JuanMarcosRamirez/LADMM_Net_Pytorch/blob/master/images/Hector.png?raw=true "Baby image")
 
+![Demo image](https://github.com/JuanMarcosRamirez/LADMM_Net_Pytorch/blob/master/images/Boy.png?raw=true "Boy image")
+
 ### Platform
 
 * Ubuntu 18.04 Operating System.
