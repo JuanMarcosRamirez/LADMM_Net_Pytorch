@@ -16,6 +16,9 @@ Hyperspectral (HS) and multispectral (MS) image fusion aims at estimating a high
 
 To reproduce the paper results, please download spectral images and coded aperture patterns from this [Google Drive.](https://drive.google.com/drive/folders/1cMRJnMuyd9zdi0vQxkxwCFJUX8HhfZYj?usp=sharing "Training dataset link")
 
+## CS Reconstruction
+
+![Demo image](https://github.com/JuanMarcosRamirez/LADMM_Net_Pytorch/blob/master/images/Hector.png?raw=true "Baby image")
 
 ### Platform
 
