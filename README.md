@@ -9,6 +9,10 @@ Hyperspectral (HS) and multispectral (MS) image fusion aims at estimating a high
 
 ![Demo image](https://github.com/JuanMarcosRamirez/LADMM_Net_Pytorch/blob/master/images/architecture.jpg?raw=true "Demo houston")
 
+![Demo image](https://github.com/JuanMarcosRamirez/LADMM_Net_Pytorch/blob/master/images/Fusion1.jpg?raw=true "Cork Wall")
+
+![Demo image](https://github.com/JuanMarcosRamirez/LADMM_Net_Pytorch/blob/master/images/Fusion2.jpg?raw=true "Door")
+
 ![Demo image](https://github.com/JuanMarcosRamirez/LADMM_Net_Pytorch/blob/master/images/Fusion3.jpg?raw=true "House")
 
 
