@@ -201,4 +201,82 @@ class ISTAcsifusionfastNet(torch.nn.Module):
         x_final = x
 
         return [x_final, layers_sym]
+
+
+
+
+
+class LADMMcsimageBlock(torch.nn.Module):
+    def __init__(self):
+        super(LADMMcsimageBlock, self).__init__()
+
+        self.lambda_step = nn.Parameter(torch.Tensor([0.025]))
+        self.soft_thr = nn.Parameter(torch.Tensor([0.01]))
+        self.rh2_prmt = nn.Parameter(torch.Tensor([0.5]))          
+
+        self.conv1_forward = nn.Parameter(init.xavier_normal_(torch.Tensor(32, 1,  3, 3)))
+        self.conv2_forward = nn.Parameter(init.xavier_normal_(torch.Tensor(32, 32, 3, 3)))
+        self.conv1_backward = nn.Parameter(init.xavier_normal_(torch.Tensor(32, 32, 3, 3)))
+        self.conv2_backward = nn.Parameter(init.xavier_normal_(torch.Tensor(1, 32, 3, 3)))
+    def forward(self, x, d, r, H, HTy, M, N):
+        
+        HTHx  = torch.mm(H,torch.t(x))
+        HTHx  = torch.t(torch.mm(torch.t(H),HTHx))
+        
+        x = x - self.lambda_step * HTHx 
+        x = x - self.lambda_step * (self.rh2_prmt * r)
+        x_upd = x + self.lambda_step * HTy
+        
+        del H, HTHx, HTy      
+        
+        # Forward transform block                
+        x_input = x_upd.view(-1, 1, M, N)
+        x = F.conv2d(x_input, self.conv1_forward, padding=1)
+        x = F.relu(x)
+        x_forward = F.conv2d(x, self.conv2_forward, padding=1)
+        
+        # Soft thresholding unit
+#        d = d.view(-1, 1, M, N)
+#        print(d.shape, x_forward.shape)
+        x = x_forward + d
+        x = torch.mul(torch.sign(x), F.relu(torch.abs(x) - self.soft_thr))
+        
+        r = r.view(-1, 1, M, N)
+        d = d + x_forward - x
+        r = x_forward + d - x
+#        d = d.view(-1,M*N)
+
+        # Inverse transform block
+        r = F.conv2d(r, self.conv1_backward, padding=1)
+        r = F.relu(r)
+        r = F.conv2d(r, self.conv2_backward, padding=1) 
+        r = r.view(-1,M*N)
+        
+        x = F.conv2d(x_forward, self.conv1_backward, padding=1)
+        x = F.relu(x)
+        x_est = F.conv2d(x, self.conv2_backward, padding=1)
+        symloss = x_est - x_input
+
+        return [x_upd, d, r, symloss]
+
+
+class LADMMcsimageNet(torch.nn.Module):
+    def __init__(self, LayerNo):
+        super(LADMMcsimageNet, self).__init__()
+        onelayer = []
+        self.LayerNo = LayerNo
+        for i in range(LayerNo):
+            onelayer.append(LADMMcsimageBlock())
+        self.fcs = nn.ModuleList(onelayer)
+
+    def forward(self, H, HTy, M, N):
+        x = HTy
+        r = 0.00 * x
+        d = torch.zeros((64,32,33,33)).cuda()
+        layers_sym = []
+        for i in range(self.LayerNo):
+            [x, d, r, layer_sym] = self.fcs[i](x, d, r, H, HTy, M, N)
+            layers_sym.append(layer_sym)
+        x_final = x
+        return [x_final, layers_sym]
         
